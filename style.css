@@ -125,6 +125,7 @@ body{
   align-items:center;
   gap:8px;
   justify-content:flex-end;
+  transform: translateX(-80px);
 }
 
 .nav a{
