@@ -1,0 +1,190 @@
+{
+  "especialidades": [
+    {
+      "especialidad": "Cardiología",
+      "profesionales": [
+        {
+          "nombre": "Valentín Ojeda",
+          "horarios": "LUNES DE 10 A 12HS Y JUEVES DE 14 A 16HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Clínica Médica",
+      "profesionales": [
+        {
+          "nombre": "Juan García",
+          "horarios": "LUNES DE 10 A 12HS, MIÉRCOLES 9 A 12HS Y JUEVES DE 14 A 16HS"
+        },
+        {
+          "nombre": "Claudia Pereyra",
+          "horarios": "MARTES DE 14 A 18HS"
+        },
+        {
+          "nombre": "Eric Quiroga",
+          "horarios": "VIERNES DE 13:30 A 17HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Cirugía General",
+      "profesionales": [
+        {
+          "nombre": "Javier Rossi",
+          "horarios": "VIERNES DE 12:30 A 13HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Dermatología",
+      "profesionales": [
+        {
+          "nombre": "Valeria Violini",
+          "horarios": "VIERNES POR MEDIO DE 14 A 16HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Diabetología",
+      "profesionales": [
+        {
+          "nombre": "Eric Quiroga",
+          "horarios": "VIERNES DE 13:30 A 17HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Ecografistas",
+      "profesionales": [
+        {
+          "nombre": "Beatriz Burgos",
+          "horarios": "MIÉRCOLES DE 10 A 14HS"
+        },
+        {
+          "nombre": "Pablo Martín",
+          "horarios": "JUEVES DE 8:30 A 12HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Endocrinología",
+      "profesionales": [
+        {
+          "nombre": "Eric Quiroga",
+          "horarios": "VIERNES DE 13:30 A 17HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Ginecología Y Obstetricia",
+      "profesionales": [
+        {
+          "nombre": "Valeria Tapia",
+          "horarios": "MARTES DE 8:30 A 12HS"
+        },
+        {
+          "nombre": "Alejandro Pivetta",
+          "horarios": "LUNES DE 14:30 A 17:00HS, JUEVES DE 9:30 A 11:30"
+        }
+      ]
+    },
+    {
+      "especialidad": "Kinesiología",
+      "profesionales": [
+        {
+          "nombre": "De Lunes A Viernes De 9 A 18Hs",
+          "horarios": ""
+        }
+      ]
+    },
+    {
+      "especialidad": "Neurocirugía",
+      "profesionales": [
+        {
+          "nombre": "Julieta Crescitelli",
+          "horarios": "MARTES POR MEDIO DE 11 A 12HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Nutrición",
+      "profesionales": [
+        {
+          "nombre": "Licenciada: Gabriela Julián",
+          "horarios": "MIÉRCOLES DE 8:30 A 11:00HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Odontología",
+      "profesionales": [
+        {
+          "nombre": "Laura Castillo",
+          "horarios": "MARTES DE 9 A 11:30HS, MIÉRCOLES DE 13 A 17:00HS Y VIERNES DE 9 A 11:30HS"
+        },
+        {
+          "nombre": "Diego Martínez",
+          "horarios": "LUNES Y JUEVES DE 11 A 14HS Y MARTES DE 14 A 16HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Otorrinolaringología",
+      "profesionales": [
+        {
+          "nombre": "Juan Aruani",
+          "horarios": "MIÉRCOLES DE 9 A 12HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Pediatría",
+      "profesionales": [
+        {
+          "nombre": "Fernando Millán",
+          "horarios": "MARTES Y VIERNES DE 14:30 A 17HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Psicología",
+      "profesionales": [
+        {
+          "nombre": "Licenciada: Gisela Muñóz",
+          "horarios": "MARTES DE 14:30 A 17:00HS, MIÉRCOLES DE 13:30 A 16:00HS"
+        },
+        {
+          "nombre": "Licenciado: Omar Suhaiman",
+          "horarios": "LUNES, MIÉRCOLES Y VIERNES DE 13:30 A 17:00HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Psiquiatría",
+      "profesionales": [
+        {
+          "nombre": "Lorena Anzorena",
+          "horarios": "MIÉRCOLES POR MEDIO DE 10 A 15:00HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Traumatología",
+      "profesionales": [
+        {
+          "nombre": "Hugo Flores",
+          "horarios": "MARTES DE 9 A 11HS"
+        }
+      ]
+    },
+    {
+      "especialidad": "Urología",
+      "profesionales": [
+        {
+          "nombre": "Federico Aveni",
+          "horarios": "JUEVES POR MEDIO DE 13 A 14HS"
+        }
+      ]
+    }
+  ]
+}
