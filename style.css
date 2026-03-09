@@ -510,7 +510,7 @@ section[id]{
 
   .tabbar{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     position: fixed;
     left: 12px;
     right: 12px;
@@ -544,6 +544,18 @@ section[id]{
   }
 
   .tabbar__icon{ font-size: 18px; line-height: 1; }
+  .tabbar__icon--emergency{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#d32f2f;
+    color:#fff;
+    font-size:13px;
+    font-weight:900;
+  }
   .tabbar__txt{ font-size: 11px; opacity: 0.92; }
 
   /* tap feedback */
