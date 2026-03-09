@@ -466,17 +466,22 @@ body{
 
   /* WhatsApp un poco más chico */
   .wa-float{
-    right: 12px;
-    bottom: 12px;
-    gap: 10px;
+    right: 14px;
+    bottom: 104px;
+    gap: 0;
   }
   .wa-float__bubble{
-    font-size:12px;
-    padding:9px 10px;
+    display:none;
   }
   .wa-float__btn{
-    width:50px;
-    height:50px;
+    width:44px;
+    height:44px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.2);
+  }
+
+  .wa-float__svg{
+    width:22px;
+    height:22px;
   }
 }
 /* ============================= */
@@ -586,7 +591,7 @@ section[id]{
 @media (max-width:768px){
 
   .wa-float{
-    bottom: 100px; /* antes estaba en 12px */
+    bottom: 104px;
   }
 
 }
