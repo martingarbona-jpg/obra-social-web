@@ -949,3 +949,99 @@ img[src*="logo-elevar"]:not(.carnet-logo) {
   display: inline-flex;
   align-items: center;
 }
+
+/* ============================= */
+/* BOTÓN FLOTANTE DE EMERGENCIA */
+/* ============================= */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.emergency-float{
+  position:fixed;
+  top:16px;
+  left:16px;
+  z-index:9997;
+}
+
+.emergency-float__btn{
+  list-style:none;
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  border:none;
+  background:#d62828;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  box-shadow:0 10px 26px rgba(0,0,0,0.2);
+  cursor:pointer;
+}
+
+.emergency-float__btn::-webkit-details-marker{
+  display:none;
+}
+
+.emergency-float__icon{
+  width:20px;
+  height:20px;
+}
+
+.emergency-float__menu{
+  margin-top:8px;
+  min-width:180px;
+  background:#fff;
+  border:1px solid var(--borde);
+  border-radius:12px;
+  box-shadow:0 16px 36px rgba(0,0,0,0.18);
+  padding:8px;
+  display:grid;
+  gap:6px;
+}
+
+.emergency-float__menu a{
+  text-decoration:none;
+  color:#1f2937;
+  font-size:13px;
+  padding:8px 10px;
+  border-radius:8px;
+  background:#f6f7fb;
+}
+
+.emergency-float__menu a strong{
+  margin-right:6px;
+}
+
+.emergency-float:not([open]) .emergency-float__menu{
+  display:none;
+}
+
+@media (max-width:768px){
+  .emergency-float{
+    top:10px;
+    left:10px;
+  }
+
+  .emergency-float__btn{
+    width:38px;
+    height:38px;
+  }
+
+  .emergency-float__icon{
+    width:18px;
+    height:18px;
+  }
+
+  .emergency-float__menu{
+    min-width:160px;
+    padding:7px;
+  }
+}
