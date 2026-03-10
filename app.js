@@ -366,7 +366,7 @@ function instalarApp() {
   });
 }
 
-function isStandalone() {
+function isStandaloneMode() {
   return (
     window.matchMedia("(display-mode: standalone)").matches ||
     window.navigator.standalone === true
@@ -375,17 +375,23 @@ function isStandalone() {
 
 function activarBotonInstalarApp() {
   const panel = document.getElementById("installPanel");
+
+  if (isStandaloneMode()) {
+    if (panel) {
+      panel.classList.add("install-panel--force-hide");
+    }
+    return;
+  }
+
+  if (panel) {
+    panel.classList.remove("install-panel--force-hide");
+  }
+
   const tab = document.getElementById("installPanelTab");
   const btn = document.getElementById("btnInstalarApp");
   const msg = document.getElementById("instalarAppMsg");
 
   if (!panel || !tab || !btn || !msg) return;
-
-  if (isStandalone()) {
-    panel.style.display = "none";
-    tab.style.display = "none";
-    return;
-  }
 
   panel.hidden = window.innerWidth > 900;
 
