@@ -109,9 +109,26 @@ function activarAnimacionCards() {
 function renderConsultorios(container, especialidades) {
   container.innerHTML = "";
 
+  function toggleCard(card) {
+    const isOpen = card.classList.contains("is-open");
+
+    container.querySelectorAll(".consultorio-card.is-open").forEach((openCard) => {
+      openCard.classList.remove("is-open");
+      openCard.setAttribute("aria-expanded", "false");
+    });
+
+    if (!isOpen) {
+      card.classList.add("is-open");
+      card.setAttribute("aria-expanded", "true");
+    }
+  }
+
   (especialidades || []).forEach((spec) => {
     const card = document.createElement("article");
     card.className = "card consultorio-card";
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-expanded", "false");
 
     let html = `<h3 class="consultorio-title">${spec.especialidad || ""}</h3>`;
     html += `<div class="consultorio-detalle"><ul class="consultorio-list">`;
@@ -127,6 +144,15 @@ function renderConsultorios(container, especialidades) {
     html += `</ul></div>`;
 
     card.innerHTML = html;
+
+    card.addEventListener("click", () => toggleCard(card));
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleCard(card);
+      }
+    });
+
     container.appendChild(card);
   });
 

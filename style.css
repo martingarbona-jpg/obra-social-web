@@ -293,10 +293,17 @@ body{
   z-index:10;
 }
 
-.consultorio-card:hover .consultorio-detalle{
+.consultorio-card:hover .consultorio-detalle,
+.consultorio-card.is-open .consultorio-detalle{
   max-height:420px;
   opacity:1;
   padding-top:10px;
+}
+
+.consultorio-card.is-open{
+  transform: scale(1.06);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.28);
+  z-index:10;
 }
 
 /* ============================= */
