@@ -327,6 +327,80 @@ function activarDescargaCarnet() {
   });
 }
 
+
+let deferredInstallPrompt = null;
+
+function registrarServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js").catch((error) => {
+      console.error("No se pudo registrar el service worker:", error);
+    });
+  });
+}
+
+function alternarPanelInstalacion() {
+  const panel = document.getElementById("installPanel");
+  const tab = document.getElementById("installPanelTab");
+  if (!panel || !tab) return;
+
+  const abrir = !panel.classList.contains("is-open");
+  panel.classList.toggle("is-open", abrir);
+  tab.setAttribute("aria-expanded", String(abrir));
+}
+
+function instalarApp() {
+  const msg = document.getElementById("instalarAppMsg");
+
+  if (!deferredInstallPrompt) {
+    if (msg) {
+      msg.textContent = "Si no aparece el instalador, abrí el menú del navegador y elegí 'Agregar a pantalla principal'.";
+    }
+    return;
+  }
+
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.finally(() => {
+    deferredInstallPrompt = null;
+  });
+}
+
+function activarBotonInstalarApp() {
+  const panel = document.getElementById("installPanel");
+  const tab = document.getElementById("installPanelTab");
+  const btn = document.getElementById("btnInstalarApp");
+  const msg = document.getElementById("instalarAppMsg");
+
+  if (!panel || !tab || !btn || !msg) return;
+
+  panel.hidden = window.innerWidth > 900;
+
+  tab.addEventListener("click", alternarPanelInstalacion);
+  btn.addEventListener("click", instalarApp);
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    msg.textContent = "";
+  });
+
+  window.addEventListener("appinstalled", () => {
+    msg.textContent = "¡Aplicación instalada correctamente!";
+    panel.classList.remove("is-open");
+    tab.setAttribute("aria-expanded", "false");
+  });
+
+  window.addEventListener("resize", () => {
+    const enMovil = window.innerWidth <= 900;
+    panel.hidden = !enMovil;
+    if (!enMovil) {
+      panel.classList.remove("is-open");
+      tab.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
 /* =========================
    INIT
 ========================= */
@@ -336,6 +410,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cargarConsultorios();
   activarAnimacionCards();
+  registrarServiceWorker();
+  activarBotonInstalarApp();
 
   const btn = document.getElementById("btnGenerar");
   if (!btn) return;
