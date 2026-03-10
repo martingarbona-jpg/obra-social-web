@@ -968,6 +968,10 @@ img[src*="logo-elevar"]:not(.carnet-logo) {
   display:none;
 }
 
+.install-panel--force-hide{
+  display:none !important;
+}
+
 @media (max-width: 900px){
   .install-panel{
     display:block;
