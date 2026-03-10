@@ -366,6 +366,13 @@ function instalarApp() {
   });
 }
 
+function isStandalone() {
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
 function activarBotonInstalarApp() {
   const panel = document.getElementById("installPanel");
   const tab = document.getElementById("installPanelTab");
@@ -374,12 +381,13 @@ function activarBotonInstalarApp() {
 
   if (!panel || !tab || !btn || !msg) return;
 
-  const isStandaloneMode = () => {
-    return window.matchMedia("(display-mode: standalone)").matches ||
-      navigator.standalone === true;
-  };
+  if (isStandalone()) {
+    panel.style.display = "none";
+    tab.style.display = "none";
+    return;
+  }
 
-  panel.hidden = isStandaloneMode() || window.innerWidth > 900;
+  panel.hidden = window.innerWidth > 900;
 
   tab.addEventListener("click", alternarPanelInstalacion);
   btn.addEventListener("click", instalarApp);
@@ -398,7 +406,7 @@ function activarBotonInstalarApp() {
 
   window.addEventListener("resize", () => {
     const enMovil = window.innerWidth <= 900;
-    const ocultarPanel = isStandaloneMode() || !enMovil;
+    const ocultarPanel = !enMovil;
     panel.hidden = ocultarPanel;
     if (ocultarPanel) {
       panel.classList.remove("is-open");
