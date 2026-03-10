@@ -374,7 +374,12 @@ function activarBotonInstalarApp() {
 
   if (!panel || !tab || !btn || !msg) return;
 
-  panel.hidden = window.innerWidth > 900;
+  const isStandaloneMode = () => {
+    return window.matchMedia("(display-mode: standalone)").matches ||
+      navigator.standalone === true;
+  };
+
+  panel.hidden = isStandaloneMode() || window.innerWidth > 900;
 
   tab.addEventListener("click", alternarPanelInstalacion);
   btn.addEventListener("click", instalarApp);
@@ -393,8 +398,9 @@ function activarBotonInstalarApp() {
 
   window.addEventListener("resize", () => {
     const enMovil = window.innerWidth <= 900;
-    panel.hidden = !enMovil;
-    if (!enMovil) {
+    const ocultarPanel = isStandaloneMode() || !enMovil;
+    panel.hidden = ocultarPanel;
+    if (ocultarPanel) {
       panel.classList.remove("is-open");
       tab.setAttribute("aria-expanded", "false");
     }
