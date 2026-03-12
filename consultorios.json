@@ -84,7 +84,7 @@
         },
         {
           "nombre": "Alejandro Pivetta",
-          "horarios": "LUNES DE 14:30 A 17:00HS, JUEVES DE 9:30 A 11:30"
+          "horarios": "LUNES DE 14:30 A 17:00HS, JUEVES DE 9:30 A 11:30Hs"
         }
       ]
     },
@@ -187,4 +187,5 @@
       ]
     }
   ]
+
 }
